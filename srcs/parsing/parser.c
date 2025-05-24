@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:21:06 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/24 23:45:24 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 00:26:12 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ t_array	lexer(t_stringref string)
 	index = 0;
 	while (index < string.size)
 	{
-		if (string.ptr[index])
-			
 		++index;
 	}
 }
