@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   lexer.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:00:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 01:04:26 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 00:51:17 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 01:01:05 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "readline/readline.h"
-#include "lexer.h"
+#ifndef LEXER_H
+# define LEXER_H
 
-int	main(void)
-{
-	char	*str;
+# include "tarray.h"
+# include "tstring.h"
 
-	while (1)
-	{
-		str = readline("minishell:");
-		lexer(strtostring(str));
-	}
-	return (0);
-}
+t_array	lexer(t_string string);
+
+#endif

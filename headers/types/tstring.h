@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:04:03 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/24 23:11:07 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 01:00:39 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_string
 	char	*ptr;
 }	t_string;
 
-typedef t_string	t_stringref;
+t_size		strlen(char *str);
+t_string	strtostring(char *str);
 
 #endif
