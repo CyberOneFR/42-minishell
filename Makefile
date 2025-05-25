@@ -6,7 +6,7 @@
 #    By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/20 17:15:05 by ethebaul          #+#    #+#              #
-#    Updated: 2025/05/25 09:39:55 by ethebaul         ###   ########.fr        #
+#    Updated: 2025/05/25 09:58:33 by ethebaul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ HEADERS		=	./headers/\
 SRCS		=	./srcs/main.c\
 				./srcs/types/string/ftstrlen.c\
 				./srcs/types/string/ftstring.c\
-				./srcs/parsing/ftlexer.c\
-				./srcs/parsing/ftskipto.c\
+				./srcs/parsing/lexer.c\
+				./srcs/parsing/skipto.c\
 				./srcs/parsing/syntax/syntaxer.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_pipe.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_and.c\
