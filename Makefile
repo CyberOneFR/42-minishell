@@ -6,7 +6,7 @@
 #    By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/20 17:15:05 by ethebaul          #+#    #+#              #
-#    Updated: 2025/05/25 04:05:16 by ethebaul         ###   ########.fr        #
+#    Updated: 2025/05/25 04:36:46 by ethebaul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,11 @@ HEADERS		=	./headers/\
 				./headers/types/
 
 SRCS		=	./srcs/main.c\
-				./srcs/parsing/lexer.c\
 				./srcs/types/string/ftstrlen.c\
-				./srcs/types/string/ftstring.c
+				./srcs/types/string/ftstring.c\
+				./srcs/types/string/ftstref.c\
+				./srcs/parsing/ftskipto.c\
+				./srcs/parsing/ftlexer.c
 
 VPATH       := $(sort $(dir $(SRCS)))
 
