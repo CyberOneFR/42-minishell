@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:00:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 01:04:26 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 02:29:36 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 {
 	char	*str;
 
+	write(1, "\033]0;GigaChell", 13);
 	while (1)
 	{
 		str = readline("minishell:");
