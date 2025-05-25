@@ -6,7 +6,7 @@
 #    By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/20 17:15:05 by ethebaul          #+#    #+#              #
-#    Updated: 2025/05/25 09:58:33 by ethebaul         ###   ########.fr        #
+#    Updated: 2025/05/25 11:50:39 by ethebaul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,6 @@ HEADERS		=	./headers/\
 SRCS		=	./srcs/main.c\
 				./srcs/types/string/ftstrlen.c\
 				./srcs/types/string/ftstring.c\
-				./srcs/parsing/lexer.c\
-				./srcs/parsing/skipto.c\
 				./srcs/parsing/syntax/syntaxer.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_pipe.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_and.c\
@@ -35,6 +33,8 @@ SRCS		=	./srcs/main.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_out.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_append.c\
 				./srcs/parsing/syntax/syntax_operator.c\
+				./srcs/parsing/skipto.c\
+				./srcs/parsing/lexer/lexer.c\
 				./srcs/alloc/smalloc.c\
 				./srcs/print/swrite.c
 
@@ -51,7 +51,8 @@ CFLAGS		=	-Wall -Wextra -Werror -O3 -march=native
 LIBS		=	-lreadline
 
 all: $(NAME)
-	@echo $(FGREEN)#### Successfully compiled $<####$(RESET)
+	@echo -e
+	@echo -e $(FGREEN)Successfully compiled $<$(RESET)
 
 $(NAME): $(OBJS)
 	@echo -e $(FRED)
@@ -65,6 +66,7 @@ $(BUILDIR)%.o: %.c | $(BUILDIR)
 
 $(BUILDIR):
 	@mkdir -p $@
+	@echo -e
 	@echo -e $(FGREEN)created $(BUILDIR)$(RESET)
 
 -include	$(DEPS)

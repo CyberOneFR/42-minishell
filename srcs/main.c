@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:00:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:37:23 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 12:45:11 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@
 
 int	main(void)
 {
-	char	*str;
+	t_string	string;
+	char		*str;
 
 	write(1, TITLE, 25);
 	while (1)
 	{
 		str = readline("minishell: ");
-		syntaxer(ftstring(str, ftstrlen(str)));
+		string = ftstring(str, ftstrlen(str));
+		if (syntaxer(string) == 0)
+			lexer(string);
 	}
 	return (0);
 }
