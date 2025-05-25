@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tnode.h                                            :+:      :+:    :+:   */
+/*   smalloc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 04:48:37 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 05:29:51 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 05:31:08 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 05:36:19 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TNODE_H
-# define TNODE_H
+#include "tsize.h"
+#include <stdlib.h>
 
-# include "tarray.h"
-
-typedef struct s_node
+int	smalloc(void **ptr, t_size size)
 {
-	struct s_node	*parent;
-	struct s_node	*child1;
-	struct s_node	*child2;
-	void			*data;
-}	t_node;
-
-#endif
+	*ptr = malloc(size);
+	if (!*ptr)
+	{
+		write(2, "Error malloc()\n", 16);
+		return (-1);
+	}
+	return (0);
+}

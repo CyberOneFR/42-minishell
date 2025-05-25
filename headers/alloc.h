@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tnode.h                                            :+:      :+:    :+:   */
+/*   alloc.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 04:48:37 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 05:29:51 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 05:31:39 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 05:36:47 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TNODE_H
-# define TNODE_H
+#ifndef ALLOC_H
+# define ALLOC_H
 
-# include "tarray.h"
+# include <stdlib.h>
+# include "tsize.h"
 
-typedef struct s_node
-{
-	struct s_node	*parent;
-	struct s_node	*child1;
-	struct s_node	*child2;
-	void			*data;
-}	t_node;
+int	smalloc(void **ptr, t_size size);
 
 #endif

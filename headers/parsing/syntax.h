@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tnode.h                                            :+:      :+:    :+:   */
+/*   syntax.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 04:48:37 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 05:29:51 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 05:50:10 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 06:03:11 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TNODE_H
-# define TNODE_H
+#ifndef SYNTAX_H
+# define SYNTAX_H
 
-# include "tarray.h"
+# include "tstring.h"
 
-typedef struct s_node
+typedef struct s_syntax_attr
 {
-	struct s_node	*parent;
-	struct s_node	*child1;
-	struct s_node	*child2;
-	void			*data;
-}	t_node;
+	int		scope_depth;
+	int		last_operator;
+	int		token;
+}	t_syntax_attr;
+
+int	syntaxer(t_string string);
 
 #endif

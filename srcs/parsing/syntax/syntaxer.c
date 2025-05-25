@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftlexer.c                                          :+:      :+:    :+:   */
+/*   syntaxer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:21:06 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 05:56:04 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 05:42:55 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 06:00:15 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tnode.h"
 #include "tstring.h"
-#include "alloc.h"
 
-int	ftlexer(t_string string, t_node node)
+int	syntaxer(t_string	string)
 {
-	t_size		index;
+	t_size	index;
 
 	index = 0;
 	while (index < string.size)
 	{
-		if (operator(string, &index))
-			return (-1);
-		if (token(string, &index))
-			return (-1);
+		if (syntax_action(string, &index))
+			return (2);
 		++index;
 	}
-	return (0);
-}
-
-int	operator(t_string string, t_size *index)
-{
-	// if (string.ptr[0] == '&' && string.ptr[1] == '&')
-		
-	// if (string.ptr[0] == '|' && string.ptr[1] == '|')
-	return (0);
-}
-
-int	token(t_string string, t_size *index)
-{
+	if (syntax_error())
+		return (2);
 	return (0);
 }

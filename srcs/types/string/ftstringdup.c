@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftlexer.c                                          :+:      :+:    :+:   */
+/*   ftstringdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:21:06 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 05:56:04 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 05:24:41 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 05:30:49 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tnode.h"
+#include "tsize.h"
 #include "tstring.h"
-#include "alloc.h"
 
-int	ftlexer(t_string string, t_node node)
+t_string	ftstringdup(t_string string)
 {
+	t_string	new;
 	t_size		index;
 
+	new.size = string.size + 1;
+	new.ptr = malloc(new.size * sizeof(char));
 	index = 0;
 	while (index < string.size)
 	{
-		if (operator(string, &index))
-			return (-1);
-		if (token(string, &index))
-			return (-1);
+		new.ptr[index] = string.ptr[index];
 		++index;
 	}
-	return (0);
-}
-
-int	operator(t_string string, t_size *index)
-{
-	// if (string.ptr[0] == '&' && string.ptr[1] == '&')
-		
-	// if (string.ptr[0] == '|' && string.ptr[1] == '|')
-	return (0);
-}
-
-int	token(t_string string, t_size *index)
-{
-	return (0);
+	new.ptr[index] = '\0';
+	return (new);
 }
