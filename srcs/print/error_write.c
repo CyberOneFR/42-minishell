@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   syntax.h                                           :+:      :+:    :+:   */
+/*   error_write.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 05:50:10 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 06:56:52 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 07:04:36 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 07:07:00 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SYNTAX_H
-# define SYNTAX_H
+#include "tstring.h"
+#include <unistd.h>
 
-# include "tstring.h"
-
-typedef struct s_syntax_attr
+int	error_write(int fd, t_string string, int ret)
 {
-	int		scope_depth;
-	int		last_operator;
-	int		token;
-}	t_syntax_attr;
-
-int	syntaxer(t_string string);
-int	syntax_error(t_syntax_attr attr);
-
-#endif
+	write(2, string.ptr, string.size);
+	return (ret);
+}
