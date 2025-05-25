@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 07:49:30 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:13:24 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 09:21:37 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	syntax_or(t_syntax_attr *attr, t_size *index)
 {
-	if (attr->token == 0)
+	if (attr->token <= 0)
 		return (swrite(2, "minishell: syntax error ||\n", 28, 2));
 	attr->last_operator = 2;
 	attr->token = 0;
