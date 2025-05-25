@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lexer.c                                            :+:      :+:    :+:   */
+/*   ftstref.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:21:06 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 04:23:22 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 04:28:41 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 04:30:53 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tarray.h"
 #include "tstring.h"
+#include "tsize.h"
 
-t_array	lexer(t_string string)
+t_string	ftsubstr(char *ptr, t_size size)
 {
-	t_array	array;
-	t_size	index;
+	t_string	string;
 
-	index = 0;
-	while (index < string.size)
-	{
-		
-		++index;
-	}
-	return (array);
+	string.size = size;
+	string.ptr = ptr;
+	return (string);
 }
