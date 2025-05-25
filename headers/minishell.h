@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:00:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:37:23 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 09:37:29 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 09:37:53 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-#include "readline/readline.h"
-#include "readline/history.h"
-#include "lexer.h"
-#include "syntax.h"
-#include <unistd.h>
+#ifndef MINISHELL_H
+# define MINISHELL_H
 
-int	main(void)
-{
-	char	*str;
+# define TITLE "\033]0;minishell 𓀐𓂸 \007"
 
-	write(1, TITLE, 25);
-	while (1)
-	{
-		str = readline("minishell: ");
-		syntaxer(ftstring(str, ftstrlen(str)));
-	}
-	return (0);
-}
+#endif

@@ -6,7 +6,7 @@
 #    By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/20 17:15:05 by ethebaul          #+#    #+#              #
-#    Updated: 2025/05/25 08:55:36 by ethebaul         ###   ########.fr        #
+#    Updated: 2025/05/25 09:39:55 by ethebaul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,10 @@ SRCS		=	./srcs/main.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_squote.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_open.c\
 				./srcs/parsing/syntax/syntax_operator/syntax_close.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_heredoc.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_in.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_out.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_append.c\
 				./srcs/parsing/syntax/syntax_operator.c\
 				./srcs/alloc/smalloc.c\
 				./srcs/print/swrite.c
