@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   syntax.h                                           :+:      :+:    :+:   */
+/*   swrite.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 05:50:10 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 07:26:31 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 07:04:36 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 07:15:02 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SYNTAX_H
-# define SYNTAX_H
+#include "tstring.h"
+#include <unistd.h>
 
-# include "tstring.h"
-
-typedef union s_syntax_attr
+int	swrite(int fd, t_string string, int ret)
 {
-	int		scope_depth;
-	int		last_operator;
-	int		token;
-}	t_syntax_attr;
-
-int	syntaxer(t_string string);
-int	syntax_error(t_syntax_attr attr);
-
-#endif
+	if (write(fd, string.ptr, string.size) == -1)
+		write(2, "write error\n", 13);
+	return (ret);
+}

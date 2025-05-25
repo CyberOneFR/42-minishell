@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_write.c                                      :+:      :+:    :+:   */
+/*   syntax_action.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 07:04:36 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 07:07:00 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 07:20:11 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 07:22:11 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tstring.h"
-#include <unistd.h>
+#include "print.h"
+#include "tsize.h"
 
-int	error_write(int fd, t_string string, int ret)
+int	syntax_action(t_string string, t_size *index)
 {
-	write(2, string.ptr, string.size);
-	return (ret);
+	if (string.ptr[0] == '\"')
+		syntax_quote();
+	return (0);
 }

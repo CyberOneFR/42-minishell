@@ -3,6 +3,9 @@
 		"tsize.h": "c",
 		"readline.h": "c",
 		"tstring.h": "c",
-		"tnode.h": "c"
+		"tnode.h": "c",
+		"unistd.h": "c",
+		"syntax.h": "c",
+		"print.h": "c"
 	}
 }
