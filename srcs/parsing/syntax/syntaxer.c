@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 05:42:55 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 08:24:21 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 09:09:43 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,22 @@ int	syntaxer(t_string	string)
 int	syntax_error(t_syntax_attr attr)
 {
 	if (attr.token == 0 && attr.last_operator == 1)
-		return (swrite(2, ftstring("minishell: syntax error &&\n", 28), 2));
+		return (swrite(2, "minishell: syntax error &&\n", 28, 2));
 	if (attr.token == 0 && attr.last_operator == 2)
-		return (swrite(2, ftstring("minishell: syntax error ||\n", 28), 2));
+		return (swrite(2, "minishell: syntax error ||\n", 28, 2));
 	if (attr.token == 0 && attr.last_operator == 3)
-		return (swrite(2, ftstring("minishell: syntax error |\n", 27), 2));
+		return (swrite(2, "minishell: syntax error |\n", 27, 2));
+	if (attr.token == 0 && attr.last_operator == 4)
+		return (swrite(2, "minishell: syntax error <\n", 27, 2));
+	if (attr.token == 0 && attr.last_operator == 5)
+		return (swrite(2, "minishell: syntax error <<\n", 28, 2));
+	if (attr.token == 0 && attr.last_operator == 6)
+		return (swrite(2, "minishell: syntax error >\n", 27, 2));
+	if (attr.token == 0 && attr.last_operator == 7)
+		return (swrite(2, "minishell: syntax error >>\n", 28, 2));
 	if (attr.scope_depth < 0)
-		return (swrite(2, ftstring("minishell: syntax error )\n", 27), 2));
+		return (swrite(2, "minishell: syntax error )\n", 27, 2));
 	if (attr.scope_depth > 0)
-		return (swrite(2, ftstring("minishell: syntax error (\n", 27), 2));
+		return (swrite(2, "minishell: syntax error (\n", 27, 2));
 	return (0);
 }

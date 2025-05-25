@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   syntax_or.c                                        :+:      :+:    :+:   */
+/*   syntax_out.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 07:49:30 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:13:24 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 09:02:33 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 09:14:29 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "syntax.h"
-#include "tsize.h"
-#include "print.h"
 
-int	syntax_or(t_syntax_attr *attr, t_size *index)
+int	syntax_out(t_syntax_attr *attr)
 {
-	if (attr->token == 0)
-		return (swrite(2, "minishell: syntax error ||\n", 28, 2));
-	attr->last_operator = 2;
-	attr->token = 0;
-	++*index;
+	if (attr->token == -1)
+		return (swrite(2, "minishell: syntax error >\n", 27, 2));
+	attr->token = -1;
+	attr->last_operator = 6;
 	return (0);
 }

@@ -6,16 +6,16 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 07:04:36 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 07:15:02 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 09:07:35 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tstring.h"
+#include "tsize.h"
 #include <unistd.h>
 
-int	swrite(int fd, t_string string, int ret)
+int	swrite(int fd, char *str, t_size len, int ret)
 {
-	if (write(fd, string.ptr, string.size) == -1)
+	if (write(fd, str, len) == -1)
 		write(2, "write error\n", 13);
 	return (ret);
 }
