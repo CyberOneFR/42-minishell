@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftlexer.c                                          :+:      :+:    :+:   */
+/*   tlist.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:21:06 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 04:46:52 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/25 04:47:55 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 04:48:33 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tarray.h"
-#include "tstring.h"
+#ifndef TLIST_H
+# define TLIST_H
 
-void	ftlexer(t_string string)
-{
-	t_size	index;
+# include "tnode.h"
 
-	index = 0;
-	while (index < string.size)
-	{
-		if (string.ptr[index] == '&' && string.ptr[index + 1] == '&')
-			
-		++index;
-	}
-	return ;
-}
+#endif
