@@ -6,52 +6,66 @@
 #    By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/20 17:15:05 by ethebaul          #+#    #+#              #
-#    Updated: 2025/05/25 02:55:30 by ethebaul         ###   ########.fr        #
+#    Updated: 2025/05/25 04:05:16 by ethebaul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 -include	./make/improved.mk
 
 BUILDIR		=	./build/
-HEADERS		=	./headers/
+HEADERS		=	./headers/\
+				./headers/parsing/\
+				./headers/types/
 
-SRCS		=	main.c
-				
-DEPS		=	$(addprefix $(BUILDIR), $(SRCS:.c=.d))
-OBJS		=	$(addprefix $(BUILDIR), $(SRCS:.c=.o))
-HEADERS		=	$(addprefix -I, $(SRCS:.c=.o))
+SRCS		=	./srcs/main.c\
+				./srcs/parsing/lexer.c\
+				./srcs/types/string/ftstrlen.c\
+				./srcs/types/string/ftstring.c
 
-NAME		=	GigaChell
+VPATH       := $(sort $(dir $(SRCS)))
+
+OBJS		=	$(addprefix $(BUILDIR), $(notdir $(SRCS:.c=.o)))
+DEPS        =   $(addprefix $(BUILDIR), $(notdir $(SRCS:.c=.d)))
+HDRS		=	$(addprefix -I, $(HEADERS))
+
+NAME		=	minishell
 
 CC			=	cc
-CFLAGS		=	-Wall -Wextra -Werror -O3 -march=native -I$(HEADERS)
+CFLAGS		=	-Wall -Wextra -Werror -O3 -march=native
+LIBS		=	-lreadline
 
 all: $(NAME)
-	@echo Building $(NAME)
+	@echo $(FGREEN)#### Successfully compiled $<####$(RESET)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $(OBJS)
-	@echo compiling
+	@echo -e $(FRED)
+	@$(CC) $(CFLAGS) $(HDRS) $(LIBS) -o $@ $^
+	@echo -e $(FGREEN)compiling $@$(RESET)
 
 $(BUILDIR)%.o: %.c | $(BUILDIR)
-	@$(CC) $(CFLAGS) -MD -MP -o $@ -c $<
+	@echo -e $(FRED)
+	@$(CC) $(CFLAGS) $(HDRS) -MD -MP -o $@ -c $<
+	@echo -e - $(FGREEN)compiling $<$(RESET)
 
 $(BUILDIR):
 	@mkdir -p $@
+	@echo -e $(FGREEN)created $(BUILDIR)$(RESET)
 
 -include	$(DEPS)
 
 clean:
+	@echo -e $(FRED)
 	@rm -rf $(BUILDIR)
-	@echo deleted all build files
+	@echo -e $(FGREEN)deleted all build files$(RESET)
 
 fclean: clean
+	@echo -e $(FRED)
 	@rm -f $(NAME)
-	@echo deleted program file
-
-re: fclean all
+	@echo -e $(FGREEN)deleted program file$(RESET)
 
 test:
-	@echo -e $(DUNDERLINE) ok but $(NOUNDERLINE) actually
+	@echo $(OBJS)
+
+re: fclean all
 
 .PHONY : all clean fclean re

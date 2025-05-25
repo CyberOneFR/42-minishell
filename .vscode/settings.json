@@ -1,5 +1,6 @@
 {
 	"files.associations": {
-		"tsize.h": "c"
+		"tsize.h": "c",
+		"readline.h": "c"
 	}
 }

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strtostring.c                                      :+:      :+:    :+:   */
+/*   ftstrlen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:10:07 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/24 21:15:41 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/24 21:06:31 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/05/25 03:24:23 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tstring.h"
+#include "tsize.h"
 
-t_string	strtostring(char *str)
+t_size	ftstrlen(char *str)
 {
-	t_string	string;
+	t_size	len;
 
-	string.ptr = str;
-	string.size = strlen(str);
-	return (string);
+	len = 0;
+	while (str[len])
+	{
+		++len;
+	}
+	return (len);
 }
