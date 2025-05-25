@@ -6,6 +6,7 @@
 		"tnode.h": "c",
 		"unistd.h": "c",
 		"syntax.h": "c",
-		"print.h": "c"
+		"print.h": "c",
+		"stdlib.h": "c"
 	}
 }

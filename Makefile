@@ -6,7 +6,7 @@
 #    By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/20 17:15:05 by ethebaul          #+#    #+#              #
-#    Updated: 2025/05/25 04:36:46 by ethebaul         ###   ########.fr        #
+#    Updated: 2025/05/25 08:22:47 by ethebaul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,19 @@ HEADERS		=	./headers/\
 SRCS		=	./srcs/main.c\
 				./srcs/types/string/ftstrlen.c\
 				./srcs/types/string/ftstring.c\
-				./srcs/types/string/ftstref.c\
+				./srcs/parsing/ftlexer.c\
 				./srcs/parsing/ftskipto.c\
-				./srcs/parsing/ftlexer.c
+				./srcs/parsing/syntax/syntaxer.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_pipe.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_and.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_dquote.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_or.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_squote.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_open.c\
+				./srcs/parsing/syntax/syntax_operator/syntax_close.c\
+				./srcs/parsing/syntax/syntax_operator.c\
+				./srcs/alloc/smalloc.c\
+				./srcs/print/swrite.c
 
 VPATH       := $(sort $(dir $(SRCS)))
 

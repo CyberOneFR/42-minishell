@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   syntax_action.c                                    :+:      :+:    :+:   */
+/*   syntax_operator.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 07:20:11 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 07:46:06 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 08:14:45 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 #include "tsize.h"
 #include "syntax.h"
 
-int	syntax_action(t_syntax_attr *attr, t_string string, t_size *index)
+int	syntax_operator(t_syntax_attr *attr, t_string string, t_size *index)
 {
 	if (string.ptr[*index] == '\"')
-		return (syntax_dquote(string, index));
+		return (syntax_dquote(attr, string, index));
 	else if (string.ptr[*index] == '\'')
-		return (syntax_squote(string, index));
+		return (syntax_squote(attr, string, index));
+	else if (string.ptr[*index] == '(')
+		return (syntax_open(attr));
+	else if (string.ptr[*index] == ')')
+		return (syntax_close(attr));
 	else if (string.ptr[*index] == '&' && string.ptr[*index + 1] == '&')
 		return (syntax_and(attr, index));
 	else if (string.ptr[*index] == '|' && string.ptr[*index + 1] == '|')

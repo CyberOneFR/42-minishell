@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 05:50:10 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 07:26:31 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 08:24:02 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "tstring.h"
 
-typedef union s_syntax_attr
+typedef struct s_syntax_attr
 {
 	int		scope_depth;
 	int		last_operator;
@@ -24,5 +24,13 @@ typedef union s_syntax_attr
 
 int	syntaxer(t_string string);
 int	syntax_error(t_syntax_attr attr);
+int	syntax_operator(t_syntax_attr *attr, t_string string, t_size *index);
+int	syntax_and(t_syntax_attr *attr, t_size *index);
+int	syntax_or(t_syntax_attr *attr, t_size *index);
+int	syntax_pipe(t_syntax_attr *attr);
+int	syntax_open(t_syntax_attr *attr);
+int	syntax_close(t_syntax_attr *attr);
+int	syntax_squote(t_syntax_attr *attr, t_string string, t_size *index);
+int	syntax_dquote(t_syntax_attr *attr, t_string string, t_size *index);
 
 #endif

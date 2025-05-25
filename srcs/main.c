@@ -6,12 +6,14 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:00:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 04:34:58 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 08:27:33 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "readline/readline.h"
+#include "readline/history.h"
 #include "lexer.h"
+#include "syntax.h"
 #include <unistd.h>
 
 int	main(void)
@@ -22,7 +24,7 @@ int	main(void)
 	while (1)
 	{
 		str = readline("minishell:");
-		ftlexer(ftstring(str));
+		syntaxer(ftstring(str, ftstrlen(str)));
 	}
 	return (0);
 }

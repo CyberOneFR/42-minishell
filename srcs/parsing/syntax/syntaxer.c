@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 05:42:55 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 07:27:31 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/05/25 08:24:21 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	syntaxer(t_string	string)
 	attr = (t_syntax_attr){0, 0, 0};
 	while (index < string.size)
 	{
-		if (syntax_action(string, &index))
+		if (syntax_operator(&attr, string, &index))
 			return (2);
 		++index;
 	}
@@ -44,4 +44,5 @@ int	syntax_error(t_syntax_attr attr)
 		return (swrite(2, ftstring("minishell: syntax error )\n", 27), 2));
 	if (attr.scope_depth > 0)
 		return (swrite(2, ftstring("minishell: syntax error (\n", 27), 2));
+	return (0);
 }
