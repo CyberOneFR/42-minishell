@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 09:37:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/06/05 16:41:37 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/06/09 17:43:58 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/06/09 17:55:20 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "tdict.h"
 
-# define TITLE "\033]0;minishell\007"
+int	init_env(char **raw_env)
+{
+	t_dict	env;
 
-#endif
+	while (raw_env[env.size])
+		++env.size;
+	while (raw_env)
+	{
+		
+	}
+}

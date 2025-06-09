@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   string_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 09:37:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/06/05 16:41:37 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/05/24 21:06:31 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/06/09 18:03:16 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "tsize.h"
 
-# define TITLE "\033]0;minishell\007"
+t_size	string_len(char *str)
+{
+	t_size	len;
 
-#endif
+	len = 0;
+	while (str[len])
+	{
+		++len;
+	}
+	return (len);
+}

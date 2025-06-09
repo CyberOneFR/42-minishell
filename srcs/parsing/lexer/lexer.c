@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:21:06 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 21:49:33 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/06/05 16:40:37 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,11 @@ int	lexer(t_string string)
 			skipto(string, &index, '\'');
 		if (string.ptr[index] == '(')
 			skipto(string, &index, ')');
-		if (string.ptr[index] == '&' && string.ptr[index + 1] == '&')
-		{
-			attr.token.size = &string.ptr[index] - attr.token.ptr;
-			write(1, attr.token.ptr, attr.token.size);
-			write(1, "\n", 1);
-			++index;
-			attr.token.ptr = &string.ptr[index + 1];
-		}
+		// if (string.ptr[index] == '&' && string.ptr[index + 1] == '&')
+		// 	lexer_and();
+		// if (string.ptr[index] == '&' && string.ptr[index + 1] == '&')
 		++index;
 	}
 	attr.token.size = &string.ptr[index] - attr.token.ptr;
-	write(1, attr.token.ptr, attr.token.size);
-	write(1, "\n", 1);
 	return (0);
 }

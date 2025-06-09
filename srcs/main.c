@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:00:29 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 12:45:11 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:02:29 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,19 @@
 #include "syntax.h"
 #include <unistd.h>
 
-int	main(void)
+int	main(int ac, char **av, char **env)
 {
 	t_string	string;
 	char		*str;
 
-	write(1, TITLE, 25);
+	write(1, TITLE, 15);
+	(void)ac;
+	(void)av;
+	init_env(env);
 	while (1)
 	{
 		str = readline("minishell: ");
-		string = ftstring(str, ftstrlen(str));
+		string = string_init(str, string_len(str));
 		if (syntaxer(string) == 0)
 			lexer(string);
 	}

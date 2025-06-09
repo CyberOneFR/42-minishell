@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftstrlen.c                                         :+:      :+:    :+:   */
+/*   tdict.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 21:06:31 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 03:24:23 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/06/09 17:50:07 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/06/09 18:04:42 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tsize.h"
+#ifndef TDICT_H
+# define TDICT_H
 
-t_size	ftstrlen(char *str)
+# include "tsize.h"
+# include "tstring.h"
+# include "tentry.h"
+
+typedef struct s_dict
 {
-	t_size	len;
+	t_size	size;
+	t_entry	*first;
+	t_entry	*last;
+}	t_dict;
 
-	len = 0;
-	while (str[len])
-	{
-		++len;
-	}
-	return (len);
-}
+#endif

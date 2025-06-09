@@ -6,7 +6,7 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:04:03 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:58:05 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:02:29 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ typedef struct s_string
 	char	*ptr;
 }	t_string;
 
-t_size		ftstrlen(char *str);
-t_string	ftstring(char *str, t_size size);
+t_size		string_len(char *str);
+t_string	string_init(char *str, t_size size);
 int			skipto(t_string string, t_size *index, char c);
 
 #endif
