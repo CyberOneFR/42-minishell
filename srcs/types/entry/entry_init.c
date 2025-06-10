@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   skipto.c                                           :+:      :+:    :+:   */
+/*   entry_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 04:23:36 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:57:07 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/06/10 00:13:14 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/06/10 00:16:53 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tstring.h"
-#include "tsize.h"
+#include "tentry.h"
 
-int	skipto(t_string string, t_size *index, char c)
+t_entry	entry_init(int id, t_string key, t_string value)
 {
-	while (*index < string.size)
-	{
-		if (string.ptr[*index] == c)
-			return (0);
-		++*index;
-	}
-	return (-1);
+	t_entry	entry;
+
+	entry.id = id;
+	entry.key = key;
+	entry.value = value;
+	return (entry);
 }

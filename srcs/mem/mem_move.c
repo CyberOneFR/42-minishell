@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swrite.c                                           :+:      :+:    :+:   */
+/*   mem_move.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 07:04:36 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:07:35 by ethebaul         ###   ########.fr       */
+/*   Created: 2025/06/10 00:26:19 by ethebaul          #+#    #+#             */
+/*   Updated: 2025/06/10 00:32:09 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tsize.h"
-#include <unistd.h>
 
-int	swrite(int fd, char *str, t_size len, int ret)
+void	mem_move(void *src, void *dest, t_size size)
 {
-	if (write(fd, str, len) == -1)
-		write(2, "write error\n", 13);
-	return (ret);
+	while (size >= 8)
+	{
+		*(unsigned long *)dest = *(unsigned long *)src;
+		src += sizeof(unsigned long);
+		dest += sizeof(unsigned long);
+		size -= 8;
+	}
+	while (size >= 1)
+	{
+		*(unsigned char *)dest = *(unsigned char *)src;
+		src += sizeof(unsigned char);
+		dest += sizeof(unsigned char);
+		size -= 1;
+	}
 }

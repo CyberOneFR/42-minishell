@@ -6,11 +6,13 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:43:19 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/06/09 17:52:29 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/06/10 02:02:06 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENV_H
 # define ENV_H
+
+int	env_init(char **raw_env);
 
 #endif

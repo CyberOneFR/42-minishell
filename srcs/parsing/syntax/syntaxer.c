@@ -6,13 +6,13 @@
 /*   By: ethebaul <ethebaul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 05:42:55 by ethebaul          #+#    #+#             */
-/*   Updated: 2025/05/25 09:32:25 by ethebaul         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:39:25 by ethebaul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tstring.h"
 #include "syntax.h"
-#include "print.h"
+#include <unistd.h>
 
 int	syntaxer(t_string	string)
 {
@@ -35,22 +35,22 @@ int	syntaxer(t_string	string)
 int	syntax_error(t_syntax_attr attr)
 {
 	if (attr.token <= 0 && attr.last_operator == 1)
-		return (swrite(2, "minishell: syntax error near &&\n", 33, 2));
+		return (write(2, "minishell: syntax error near &&\n", 33));
 	if (attr.token <= 0 && attr.last_operator == 2)
-		return (swrite(2, "minishell: syntax error near ||\n", 33, 2));
+		return (write(2, "minishell: syntax error near ||\n", 33));
 	if (attr.token <= 0 && attr.last_operator == 3)
-		return (swrite(2, "minishell: syntax error near |\n", 32, 2));
+		return (write(2, "minishell: syntax error near |\n", 32));
 	if (attr.token <= 0 && attr.last_operator == 4)
-		return (swrite(2, "minishell: syntax error near <\n", 32, 2));
+		return (write(2, "minishell: syntax error near <\n", 32));
 	if (attr.token <= 0 && attr.last_operator == 5)
-		return (swrite(2, "minishell: syntax error near <<\n", 33, 2));
+		return (write(2, "minishell: syntax error near <<\n", 33));
 	if (attr.token <= 0 && attr.last_operator == 6)
-		return (swrite(2, "minishell: syntax error near >\n", 32, 2));
+		return (write(2, "minishell: syntax error near >\n", 32));
 	if (attr.token <= 0 && attr.last_operator == 7)
-		return (swrite(2, "minishell: syntax error near >>\n", 33, 2));
+		return (write(2, "minishell: syntax error near >>\n", 33));
 	if (attr.scope_depth < 0)
-		return (swrite(2, "minishell: syntax error near )\n", 32, 2));
+		return (write(2, "minishell: syntax error near )\n", 32));
 	if (attr.scope_depth > 0)
-		return (swrite(2, "minishell: syntax error near (\n", 32, 2));
+		return (write(2, "minishell: syntax error near (\n", 32));
 	return (0);
 }
